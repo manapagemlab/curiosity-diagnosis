@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🌱好奇心は才能の芽！あなたはどんな“伸ばし方”してる？</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      max-width: 700px;
+      margin: auto;
+      line-height: 1.6;
+    }
+    h1 {
+      color: #2e5c4e;
+    }
+    .question {
+      margin-top: 20px;
+    }
+    .result {
+      margin-top: 40px;
+      padding: 20px;
+      background-color: #f0fff4;
+      border: 1px solid #90ee90;
+      border-radius: 10px;
+    }
+    .line-button {
+      background-color: #00c300;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🌱 好奇心は才能の芽！<br>あなたはどんな“伸ばし方”してる？</h1>
+
+  <form id="quizForm">
+    <div class="question">
+      <p>Q1. 子どもが「なんで？」「どうして？」と聞いてきたら？</p>
+      <input type="radio" name="q1" value="d" required> 丁寧に答える<br>
+      <input type="radio" name="q1" value="b"> 「自分で考えてごらん」と返す<br>
+      <input type="radio" name="q1" value="a"> 「そういうもんだよ」と受け流す<br>
+      <input type="radio" name="q1" value="c"> 一緒に調べたり試したりする
+    </div>
+
+    <div class="question">
+      <p>Q2. 子どもが「これやってみたい！」と言い出したら？</p>
+      <input type="radio" name="q2" value="c" required> まずやらせてみる<br>
+      <input type="radio" name="q2" value="b"> 意味を確かめてからOKを出す<br>
+      <input type="radio" name="q2" value="a"> 予定が狂うので止める<br>
+      <input type="radio" name="q2" value="d"> 一緒にワクワクして動く
+    </div>
+
+    <div class="question">
+      <p>Q3. 子どもが落ち込んでいたら？</p>
+      <input type="radio" name="q3" value="a" required> 「大丈夫」と声をかける<br>
+      <input type="radio" name="q3" value="b"> アドバイスする<br>
+      <input type="radio" name="q3" value="c"> 見守る<br>
+      <input type="radio" name="q3" value="d"> 一緒にもう一度挑戦する
+    </div>
+
+    <div class="question">
+      <p>Q4. 子どもが学びにやる気がないときは？</p>
+      <input type="radio" name="q4" value="a" required> 気分転換させる<br>
+      <input type="radio" name="q4" value="b"> 意味を伝える<br>
+      <input type="radio" name="q4" value="c"> 放っておく<br>
+      <input type="radio" name="q4" value="d"> 好きなことに繋げる
+    </div>
+
+    <div class="question">
+      <p>Q5. AIやデジタルツールとの付き合い方は？</p>
+      <input type="radio" name="q5" value="a" required> 心配でまだよく分からない<br>
+      <input type="radio" name="q5" value="b"> 教育に使えるならアリかも<br>
+      <input type="radio" name="q5" value="c"> 距離を置きたい<br>
+      <input type="radio" name="q5" value="d"> 一緒に楽しんでいる
+    </div>
+
+    <br>
+    <button type="submit">🔍 診断する</button>
+  </form>
+
+  <div id="result" class="result" style="display: none;"></div>
+
+  <script>
+    const form = document.getElementById('quizForm');
+    const resultDiv = document.getElementById('result');
+
+    const resultD = `
+      <h2>💡あなたの診断タイプは…</h2>
+      <h1 style="color: #006400;">🟡 タイプD：共創チャレンジャー</h1>
+      <p>👦 子どもの「やってみたい！」にワクワクしながら付き合って、<br>一緒にチャレンジを楽しめるあなた。</p>
+      <p>でもときどき…</p>
+      <ul><li>❓この関わり方でいいのかな？</li><li>❓もっと“学び”につなげられるサポートができたら…</li></ul>
+      <p>そんなふうに思うこと、ありませんか？</p>
+      <h3>🌈 LINEで、あなたの子育てにヒントをプラス！</h3>
+      <p>📲 月3回の親子ワークや、好奇心を伸ばす声かけヒントが届く<br>✨ あなたの“共創力”がもっと発揮できるように整えています！</p>
+      <div style="margin-top: 20px; text-align: center;">
+        <a href="https://lin.ee/u5XpmRk" target="_blank" class="line-button">👉 LINEで受け取る</a>
+      </div>
+    `;
+
+    form.onsubmit = function(e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+      let score = {a:0, b:0, c:0, d:0};
+      for (let value of formData.values()) {
+        score[value]++;
+      }
+      const max = Object.entries(score).reduce((a, b) => a[1] >= b[1] ? a : b)[0];
+      if (max === 'd') {
+        resultDiv.innerHTML = resultD;
+        resultDiv.style.display = "block";
+      }
+    };
+  </script>
+
+</body>
+</html>
