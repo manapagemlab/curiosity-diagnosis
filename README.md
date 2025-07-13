@@ -1,1 +1,1 @@
-# -curiosity-diagnosis
+# curiosity-diagnosis
