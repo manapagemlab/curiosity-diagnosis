@@ -22,7 +22,7 @@
     }
 
     .wrap {
-      width: min(100% - 32px, 1040px);
+      width: min(100% - 32px, 1120px);
       margin: 0 auto;
     }
 
@@ -82,8 +82,8 @@
 
     .hero .wrap {
       display: grid;
-      gap: 24px;
-      padding: 28px 0 44px;
+      gap: 18px;
+      padding: 24px 0 40px;
     }
 
     .hero-image {
@@ -98,6 +98,21 @@
       border-radius: 0;
       background: #fff;
       box-shadow: 0 14px 34px rgba(88, 73, 54, 0.12);
+    }
+
+    .hero-copy {
+      display: grid;
+      justify-items: center;
+      gap: 10px;
+      text-align: center;
+    }
+
+    .hero-title {
+      margin: 0;
+      color: #182a22;
+      font-size: 32px;
+      line-height: 1.28;
+      letter-spacing: 0;
     }
 
     .badge {
@@ -142,7 +157,8 @@
     }
 
     .lead {
-      margin-bottom: 20px;
+      max-width: 680px;
+      margin: 0;
       color: #58665f;
       font-size: 16px;
       font-weight: 700;
@@ -225,29 +241,35 @@
       }
 
       .hero .wrap {
-        min-height: 680px;
-        grid-template-columns: minmax(0, 0.92fr) minmax(330px, 0.82fr);
-        gap: 44px;
+        min-height: auto;
+        grid-template-columns: 1fr;
+        gap: 24px;
         align-items: center;
-        padding: 64px 0;
+        padding: 44px 0 54px;
       }
 
       .hero-copy {
-        order: 1;
+        order: 2;
       }
 
       .hero-image {
-        order: 2;
+        order: 1;
         margin: 0;
       }
 
       .hero-image img {
         border-radius: 8px;
         border: 1px solid #e3d9cc;
+        box-shadow: 0 20px 48px rgba(88, 73, 54, 0.14);
       }
 
       h1 {
-        font-size: clamp(44px, 5vw, 64px);
+        font-size: clamp(42px, 4.4vw, 56px);
+        line-height: 1.24;
+      }
+
+      .hero-title {
+        font-size: clamp(34px, 3.8vw, 46px);
       }
 
       h2 {
@@ -256,6 +278,7 @@
 
       .lead {
         font-size: 18px;
+        max-width: 560px;
       }
 
       .button {
@@ -264,7 +287,7 @@
       }
 
       .note {
-        text-align: left;
+        text-align: center;
       }
 
       .cards {
@@ -281,6 +304,16 @@
         justify-content: space-between;
         gap: 28px;
         padding: 34px;
+      }
+    }
+
+    @media (min-width: 1080px) {
+      .wrap {
+        width: min(100% - 64px, 1200px);
+      }
+
+      .hero-image img {
+        width: 100%;
       }
     }
   </style>
@@ -301,11 +334,7 @@
         </div>
 
         <div class="hero-copy">
-          <p class="badge">10問でわかる、親子の好奇心タイプ</p>
-          <h1>子どもの「なんで？」を、才能の芽に変える関わり方診断</h1>
-          <p class="lead">
-            毎日の声かけや見守り方から、あなたの強みと、子どもの好奇心を伸ばすヒントがわかります。
-          </p>
+          <h1 class="hero-title">こどもの<br>「なんで」を<br>才能の芽に変える<br>かかわり方診断</h1>
           <a class="button" href="index.html">診断をはじめる</a>
           <p class="note">所要時間：約2分｜登録不要｜スマホでかんたん</p>
         </div>
