@@ -3,224 +3,363 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>好奇心は才能の芽！あなたはどんな伸ばし方してる？</title>
+  <title>好奇心は才能の芽｜親子の関わり方診断</title>
   <style>
-    body {
-      font-family: Arial, "Yu Gothic", Meiryo, sans-serif;
-      padding: 20px;
-      max-width: 700px;
-      margin: auto;
-      line-height: 1.6;
-      color: #23312b;
+    * {
+      box-sizing: border-box;
     }
 
-    h1 {
-      color: #2e5c4e;
+    body {
+      margin: 0;
+      color: #26362f;
+      background: #fffaf4;
+      font-family: Arial, "Yu Gothic", Meiryo, sans-serif;
+      line-height: 1.75;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    .wrap {
+      width: min(100% - 32px, 1040px);
+      margin: 0 auto;
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 250, 244, 0.94);
+      border-bottom: 1px solid #eadfd3;
+      backdrop-filter: blur(12px);
+    }
+
+    .header .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 0;
+    }
+
+    .brand {
+      color: #2f6a55;
+      font-size: 13px;
+      font-weight: 800;
       line-height: 1.35;
     }
 
-    .question {
-      margin-top: 20px;
-      padding-bottom: 18px;
-      border-bottom: 1px solid #e3ece6;
-    }
-
-    label {
-      display: block;
-      margin: 8px 0;
-      cursor: pointer;
-    }
-
-    button {
-      background-color: #2e5c4e;
-      color: white;
-      padding: 12px 22px;
-      border: 0;
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 52px;
+      padding: 13px 20px;
       border-radius: 8px;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .result {
-      margin-top: 40px;
-      padding: 20px;
-      background-color: #f0fff4;
-      border: 1px solid #90ee90;
-      border-radius: 10px;
-    }
-
-    .line-button {
-      background-color: #00c300;
-      color: white;
-      padding: 12px 20px;
-      border-radius: 8px;
+      background: #2f6a55;
+      color: #fff;
+      font-weight: 800;
       text-decoration: none;
-      font-weight: bold;
+      box-shadow: 0 12px 26px rgba(47, 106, 85, 0.2);
+    }
+
+    .button.small {
+      width: auto;
+      min-height: 40px;
+      padding: 9px 14px;
+      font-size: 13px;
+      box-shadow: none;
+      white-space: nowrap;
+    }
+
+    .hero {
+      overflow: hidden;
+      background: #fff7ec;
+      border-bottom: 1px solid #eadfd3;
+    }
+
+    .hero .wrap {
+      display: grid;
+      gap: 24px;
+      padding: 28px 0 44px;
+    }
+
+    .hero-image {
+      position: relative;
+      margin: 0 -16px;
+    }
+
+    .hero-image img {
+      display: block;
+      width: 100%;
+      border: 0;
+      border-radius: 0;
+      background: #fff;
+      box-shadow: 0 14px 34px rgba(88, 73, 54, 0.12);
+    }
+
+    .badge {
       display: inline-block;
-      margin-top: 20px;
+      margin-bottom: 14px;
+      padding: 7px 12px;
+      border: 1px solid #cbe0d2;
+      border-radius: 999px;
+      background: #ffffff;
+      color: #2f6a55;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 16px;
+      color: #182a22;
+      font-size: 34px;
+      line-height: 1.28;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      color: #182a22;
+      font-size: 27px;
+      line-height: 1.38;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin-bottom: 8px;
+      color: #2f6a55;
+      font-size: 19px;
+      line-height: 1.4;
+    }
+
+    .lead {
+      margin-bottom: 20px;
+      color: #58665f;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .note {
+      margin: 10px 0 0;
+      color: #7a7065;
+      font-size: 13px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .section {
+      border-bottom: 1px solid #ede3d8;
+      background: #fffaf4;
+    }
+
+    .section.alt {
+      background: #f4fbf1;
+    }
+
+    .section .wrap {
+      padding: 46px 0;
+    }
+
+    .text {
+      color: #58665f;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .cards,
+    .types {
+      display: grid;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .card,
+    .type {
+      padding: 20px;
+      border: 1px solid #e2d8cb;
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 10px 24px rgba(88, 73, 54, 0.06);
+    }
+
+    .type {
+      font-weight: 800;
+    }
+
+    .type span {
+      display: block;
+      margin-bottom: 6px;
+      color: #2f6a55;
+      font-size: 13px;
+    }
+
+    .cta-box {
+      padding: 24px;
+      border: 1px solid #cfe1d4;
+      border-radius: 8px;
+      background: #ffffff;
+      box-shadow: 0 14px 34px rgba(47, 106, 85, 0.1);
+    }
+
+    .footer {
+      padding: 24px 16px;
+      background: #182a22;
+      color: #e7efe8;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    @media (min-width: 760px) {
+      .brand {
+        font-size: 15px;
+      }
+
+      .hero .wrap {
+        min-height: 680px;
+        grid-template-columns: minmax(0, 0.92fr) minmax(330px, 0.82fr);
+        gap: 44px;
+        align-items: center;
+        padding: 64px 0;
+      }
+
+      .hero-copy {
+        order: 1;
+      }
+
+      .hero-image {
+        order: 2;
+        margin: 0;
+      }
+
+      .hero-image img {
+        border-radius: 8px;
+        border: 1px solid #e3d9cc;
+      }
+
+      h1 {
+        font-size: clamp(44px, 5vw, 64px);
+      }
+
+      h2 {
+        font-size: 40px;
+      }
+
+      .lead {
+        font-size: 18px;
+      }
+
+      .button {
+        width: auto;
+        min-width: 260px;
+      }
+
+      .note {
+        text-align: left;
+      }
+
+      .cards {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .types {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .cta-box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 28px;
+        padding: 34px;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>🌱 好奇心は才能の芽！<br>あなたはどんな“伸ばし方”してる？</h1>
-
-  <form id="quizForm">
-    <div class="question">
-      <p>Q1. 子どもが「なんで？」「どうして？」と聞いてきたら？</p>
-      <label><input type="radio" name="q1" value="d" required> 丁寧に答える</label>
-      <label><input type="radio" name="q1" value="b"> 「自分で考えてごらん」と返す</label>
-      <label><input type="radio" name="q1" value="a"> 「そういうもんだよ」と受け流す</label>
-      <label><input type="radio" name="q1" value="c"> 一緒に調べたり試したりする</label>
+  <header class="header">
+    <div class="wrap">
+      <div class="brand">好奇心は才能の芽｜親子の関わり方診断</div>
+      <a class="button small" href="diagnosis.html">無料診断へ</a>
     </div>
+  </header>
 
-    <div class="question">
-      <p>Q2. 子どもが「これやってみたい！」と言い出したら？</p>
-      <label><input type="radio" name="q2" value="c" required> まずやらせてみる</label>
-      <label><input type="radio" name="q2" value="b"> 意味を確かめてからOKを出す</label>
-      <label><input type="radio" name="q2" value="a"> 予定が狂うので止める</label>
-      <label><input type="radio" name="q2" value="d"> 一緒にワクワクして動く</label>
-    </div>
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-image">
+          <img src="hero.png" alt="親子の関わり方診断のイメージ" />
+        </div>
 
-    <div class="question">
-      <p>Q3. 子どもが落ち込んでいたら？</p>
-      <label><input type="radio" name="q3" value="a" required> 「大丈夫」と声をかける</label>
-      <label><input type="radio" name="q3" value="b"> アドバイスする</label>
-      <label><input type="radio" name="q3" value="c"> 見守る</label>
-      <label><input type="radio" name="q3" value="d"> 一緒にもう一度挑戦する</label>
-    </div>
-
-    <div class="question">
-      <p>Q4. 子どもが学びにやる気がないときは？</p>
-      <label><input type="radio" name="q4" value="a" required> 気分転換させる</label>
-      <label><input type="radio" name="q4" value="b"> 意味を伝える</label>
-      <label><input type="radio" name="q4" value="c"> 放っておく</label>
-      <label><input type="radio" name="q4" value="d"> 好きなことに繋げる</label>
-    </div>
-
-    <div class="question">
-      <p>Q5. AIやデジタルツールとの付き合い方は？</p>
-      <label><input type="radio" name="q5" value="a" required> 心配でまだよく分からない</label>
-      <label><input type="radio" name="q5" value="b"> 教育に使えるならアリかも</label>
-      <label><input type="radio" name="q5" value="c"> 距離を置きたい</label>
-      <label><input type="radio" name="q5" value="d"> 一緒に楽しんでいる</label>
-    </div>
-
-    <div class="question">
-      <p>Q6. 子どもが失敗したとき、最初にすることは？</p>
-      <label><input type="radio" name="q6" value="a" required> 気持ちを受け止める</label>
-      <label><input type="radio" name="q6" value="b"> 原因を一緒に整理する</label>
-      <label><input type="radio" name="q6" value="c"> 少し距離を置いて見守る</label>
-      <label><input type="radio" name="q6" value="d"> 次のチャレンジを一緒に考える</label>
-    </div>
-
-    <div class="question">
-      <p>Q7. 子どもが夢中になっている遊びを見たら？</p>
-      <label><input type="radio" name="q7" value="c" required> しばらく自由に続けさせる</label>
-      <label><input type="radio" name="q7" value="d"> 一緒に参加して盛り上がる</label>
-      <label><input type="radio" name="q7" value="b"> 何を学べそうか考える</label>
-      <label><input type="radio" name="q7" value="a"> 安全にできるよう整える</label>
-    </div>
-
-    <div class="question">
-      <p>Q8. 新しい教材や体験を選ぶときは？</p>
-      <label><input type="radio" name="q8" value="b" required> 学びの目的が分かるものを選ぶ</label>
-      <label><input type="radio" name="q8" value="a"> 子どもが安心して取り組めるものを選ぶ</label>
-      <label><input type="radio" name="q8" value="d"> 親子で楽しめそうなものを選ぶ</label>
-      <label><input type="radio" name="q8" value="c"> 子どもが自分で工夫できるものを選ぶ</label>
-    </div>
-
-    <div class="question">
-      <p>Q9. 子どもから予想外のアイデアが出たら？</p>
-      <label><input type="radio" name="q9" value="d" required> 「面白いね！」と一緒に試す</label>
-      <label><input type="radio" name="q9" value="b"> どんな意味があるか聞いてみる</label>
-      <label><input type="radio" name="q9" value="c"> まずは本人のやり方で任せる</label>
-      <label><input type="radio" name="q9" value="a"> できそうな範囲を一緒に確認する</label>
-    </div>
-
-    <div class="question">
-      <p>Q10. 親として大切にしたい関わり方は？</p>
-      <label><input type="radio" name="q10" value="a" required> 子どもが安心できる存在でいる</label>
-      <label><input type="radio" name="q10" value="b"> 学びの意味を分かりやすく伝える</label>
-      <label><input type="radio" name="q10" value="c"> 自分で考える時間を大切にする</label>
-      <label><input type="radio" name="q10" value="d"> 一緒に楽しみながら挑戦する</label>
-    </div>
-
-    <br>
-    <button type="submit">🔍 診断する</button>
-  </form>
-
-  <div id="result" class="result" style="display: none;"></div>
-
-  <script>
-    const form = document.getElementById('quizForm');
-    const resultDiv = document.getElementById('result');
-
-    const lineBlock = (typeName) => `
-      <h3>🌱LINEでサポートを受け取ろう</h3>
-      <p>📲 公式LINEではAI活用や子育ての情報を発信中！診断結果「${typeName}」で詳しい結果を配信します。</p>
-      <div style="margin-top: 20px; text-align: center;">
-        <a href="https://lin.ee/u5XpmRk" target="_blank" class="line-button">👉 詳しい結果をLINEで受け取る</a>
+        <div class="hero-copy">
+          <p class="badge">10問でわかる、親子の好奇心タイプ</p>
+          <h1>子どもの「なんで？」を、才能の芽に変える関わり方診断</h1>
+          <p class="lead">
+            毎日の声かけや見守り方から、あなたの強みと、子どもの好奇心を伸ばすヒントがわかります。
+          </p>
+          <a class="button" href="diagnosis.html">診断をはじめる</a>
+          <p class="note">所要時間：約2分｜登録不要｜スマホでかんたん</p>
+        </div>
       </div>
-    `;
+    </section>
 
-    const results = {
-      a: `
-        <h2>💡あなたの診断タイプは…</h2>
-        <h1 style="color: #006400;">🟢 安心サポータータイプ</h1>
-        <p>子どもの気持ちに寄り添い、安心できる土台をつくるのが得意なタイプです。</p>
-        <p>まず受け止める力があるからこそ、子どもは「やってみようかな」と思いやすくなります。</p>
-        <p>次の一歩として、子どもの「なぜ？」や「やってみたい」を少しだけ深掘りする声かけを足してみましょう。</p>
-        ${lineBlock("安心サポータータイプ")}
-      `,
-      b: `
-        <h2>💡あなたの診断タイプは…</h2>
-        <h1 style="color: #006400;">🔵 意味づけナビゲータータイプ</h1>
-        <p>子どもの行動や学びに「どんな意味があるか」を考え、道筋を示すのが得意なタイプです。</p>
-        <p>学びを生活や将来につなげて伝えられるので、子どもにとって頼れる案内役になれます。</p>
-        <p>ときどき答えを急がず、子ども自身の発見を待つ時間をつくると、好奇心がさらに伸びていきます。</p>
-        ${lineBlock("意味づけナビゲータータイプ")}
-      `,
-      c: `
-        <h2>💡あなたの診断タイプは…</h2>
-        <h1 style="color: #006400;">🟣 見守りクリエイタータイプ</h1>
-        <p>子どもが自分で考えたり試したりする余白を大切にできるタイプです。</p>
-        <p>すぐに手を出しすぎない関わりは、子どもの主体性や工夫する力を育てます。</p>
-        <p>そこに「どう思った？」「次は何を試す？」という一言を添えると、学びがぐっと深まります。</p>
-        ${lineBlock("見守りクリエイタータイプ")}
-      `,
-      d: `
-        <h2>💡あなたの診断タイプは…</h2>
-        <h1 style="color: #006400;">🟡 共創チャレンジャータイプ</h1>
-        <p>👦 子どもの「やってみたい！」にワクワクしながら付き合って、一緒にチャレンジを楽しめるあなた。</p>
-        <p>でもときどき…</p>
-        <ul>
-          <li>❓ この関わり方でいいのかな？</li>
-          <li>❓ もっと“学び”につなげられるサポートができたら…</li>
-        </ul>
-        <p>そんなふうに思うこと、ありませんか？</p>
-        <p>あなたのような共創タイプは、<strong>子どもの好奇心の原石を見つけて磨くプロ</strong>になれます。</p>
-        <p>そのためには、大人も一緒に楽しみながら学ぶ姿勢がとても大切です。</p>
-        <p>🔧 AIをツールとして活用することで、子どもの「好き」や「なぜ？」を深め、<br>
-        自然と“学ぶ楽しさ”へとつなげていくことができます。</p>
-        ${lineBlock("共創チャレンジャータイプ")}
-      `
-    };
+    <section class="section">
+      <div class="wrap">
+        <h2>「この関わり方でいいのかな？」と思ったことはありませんか。</h2>
+        <p class="text">
+          忙しい毎日の中でも、子どもの好奇心を大切にしたい。そんなママが、自分らしい関わり方を見つけるための診断です。
+        </p>
+        <div class="cards">
+          <div class="card">
+            <h3>今の強みがわかる</h3>
+            <p>普段の声かけや行動から、子どもに与えている良い影響を見える化します。</p>
+          </div>
+          <div class="card">
+            <h3>伸ばし方がわかる</h3>
+            <p>子どもの「やってみたい」「なぜ？」を学びにつなげる一歩がわかります。</p>
+          </div>
+          <div class="card">
+            <h3>LINEで深掘りできる</h3>
+            <p>公式LINEではAI活用や子育ての情報を発信中。タイプ別の詳しい結果も受け取れます。</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    form.onsubmit = function(e) {
-      e.preventDefault();
-      const formData = new FormData(form);
-      const score = { a: 0, b: 0, c: 0, d: 0 };
+    <section class="section alt">
+      <div class="wrap">
+        <h2>診断結果は4つの日本語タイプ</h2>
+        <div class="types">
+          <div class="type"><span>安心</span>安心サポータータイプ</div>
+          <div class="type"><span>意味づけ</span>意味づけナビゲータータイプ</div>
+          <div class="type"><span>見守り</span>見守りクリエイタータイプ</div>
+          <div class="type"><span>共創</span>共創チャレンジャータイプ</div>
+        </div>
+      </div>
+    </section>
 
-      for (const value of formData.values()) {
-        score[value]++;
-      }
+    <section class="section">
+      <div class="wrap">
+        <div class="cta-box">
+          <div>
+            <h2>まずは10問の無料診断へ</h2>
+            <p class="text">診断サイトに移動して、あなたのタイプを確認できます。</p>
+          </div>
+          <a class="button" href="diagnosis.html">診断サイトへ進む</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-      const max = Object.entries(score).reduce((a, b) => a[1] >= b[1] ? a : b)[0];
-      resultDiv.innerHTML = results[max];
-      resultDiv.style.display = "block";
-      resultDiv.scrollIntoView({ behavior: "smooth", block: "start" });
-    };
-  </script>
+  <footer class="footer">好奇心は才能の芽｜親子の関わり方診断</footer>
 </body>
 </html>
