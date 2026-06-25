@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -115,6 +114,55 @@
       </div>
     `;
 
+    const resultA = `
+      <h2>💡あなたの診断タイプは…</h2>
+      <h1 style="color: #006400;">🟢 タイプA：安心サポーター</h1>
+      <p>子どもの気持ちに寄り添い、安心できる土台をつくるのが得意なタイプです。</p>
+      <p>まず受け止める力があるからこそ、子どもは「やってみようかな」と思いやすくなります。</p>
+      <p>次の一歩として、子どもの「なぜ？」や「やってみたい」を少しだけ深掘りする声かけを足してみましょう。</p>
+
+      <h3>🌱LINEでサポートを受け取ろう</h3>
+      <p>📲 月3回の親子ワークや、声かけアイディアをLINEでお届け中！</p>
+      <div style="margin-top: 20px; text-align: center;">
+        <a href="https://lin.ee/u5XpmRk" target="_blank" class="line-button">👉 LINEで受け取る</a>
+      </div>
+    `;
+
+    const resultB = `
+      <h2>💡あなたの診断タイプは…</h2>
+      <h1 style="color: #006400;">🔵 タイプB：意味づけナビゲーター</h1>
+      <p>子どもの行動や学びに「どんな意味があるか」を考え、道筋を示すのが得意なタイプです。</p>
+      <p>学びを生活や将来につなげて伝えられるので、子どもにとって頼れる案内役になれます。</p>
+      <p>ときどき答えを急がず、子ども自身の発見を待つ時間をつくると、好奇心がさらに伸びていきます。</p>
+
+      <h3>🌱LINEでサポートを受け取ろう</h3>
+      <p>📲 月3回の親子ワークや、声かけアイディアをLINEでお届け中！</p>
+      <div style="margin-top: 20px; text-align: center;">
+        <a href="https://lin.ee/u5XpmRk" target="_blank" class="line-button">👉 LINEで受け取る</a>
+      </div>
+    `;
+
+    const resultC = `
+      <h2>💡あなたの診断タイプは…</h2>
+      <h1 style="color: #006400;">🟣 タイプC：見守りクリエイター</h1>
+      <p>子どもが自分で考えたり試したりする余白を大切にできるタイプです。</p>
+      <p>すぐに手を出しすぎない関わりは、子どもの主体性や工夫する力を育てます。</p>
+      <p>そこに「どう思った？」「次は何を試す？」という一言を添えると、学びがぐっと深まります。</p>
+
+      <h3>🌱LINEでサポートを受け取ろう</h3>
+      <p>📲 月3回の親子ワークや、声かけアイディアをLINEでお届け中！</p>
+      <div style="margin-top: 20px; text-align: center;">
+        <a href="https://lin.ee/u5XpmRk" target="_blank" class="line-button">👉 LINEで受け取る</a>
+      </div>
+    `;
+
+    const results = {
+      a: resultA,
+      b: resultB,
+      c: resultC,
+      d: resultD
+    };
+
     form.onsubmit = function(e) {
       e.preventDefault();
       const formData = new FormData(form);
@@ -123,10 +171,9 @@
         score[value]++;
       }
       const max = Object.entries(score).reduce((a, b) => a[1] >= b[1] ? a : b)[0];
-      if (max === 'd') {
-        resultDiv.innerHTML = resultD;
-        resultDiv.style.display = "block";
-      }
+      resultDiv.innerHTML = results[max];
+      resultDiv.style.display = "block";
+      resultDiv.scrollIntoView({ behavior: "smooth", block: "start" });
     };
   </script>
 
