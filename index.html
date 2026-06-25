@@ -2,22 +2,46 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>🌱好奇心は才能の芽！あなたはどんな“伸ばし方”してる？</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>好奇心は才能の芽！あなたはどんな伸ばし方してる？</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: Arial, "Yu Gothic", Meiryo, sans-serif;
       padding: 20px;
       max-width: 700px;
       margin: auto;
       line-height: 1.6;
+      color: #23312b;
     }
+
     h1 {
       color: #2e5c4e;
+      line-height: 1.35;
     }
+
     .question {
       margin-top: 20px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid #e3ece6;
     }
+
+    label {
+      display: block;
+      margin: 8px 0;
+      cursor: pointer;
+    }
+
+    button {
+      background-color: #2e5c4e;
+      color: white;
+      padding: 12px 22px;
+      border: 0;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
     .result {
       margin-top: 40px;
       padding: 20px;
@@ -25,6 +49,7 @@
       border: 1px solid #90ee90;
       border-radius: 10px;
     }
+
     .line-button {
       background-color: #00c300;
       color: white;
@@ -38,48 +63,87 @@
   </style>
 </head>
 <body>
-
   <h1>🌱 好奇心は才能の芽！<br>あなたはどんな“伸ばし方”してる？</h1>
 
   <form id="quizForm">
     <div class="question">
       <p>Q1. 子どもが「なんで？」「どうして？」と聞いてきたら？</p>
-      <input type="radio" name="q1" value="d" required> 丁寧に答える<br>
-      <input type="radio" name="q1" value="b"> 「自分で考えてごらん」と返す<br>
-      <input type="radio" name="q1" value="a"> 「そういうもんだよ」と受け流す<br>
-      <input type="radio" name="q1" value="c"> 一緒に調べたり試したりする
+      <label><input type="radio" name="q1" value="d" required> 丁寧に答える</label>
+      <label><input type="radio" name="q1" value="b"> 「自分で考えてごらん」と返す</label>
+      <label><input type="radio" name="q1" value="a"> 「そういうもんだよ」と受け流す</label>
+      <label><input type="radio" name="q1" value="c"> 一緒に調べたり試したりする</label>
     </div>
 
     <div class="question">
       <p>Q2. 子どもが「これやってみたい！」と言い出したら？</p>
-      <input type="radio" name="q2" value="c" required> まずやらせてみる<br>
-      <input type="radio" name="q2" value="b"> 意味を確かめてからOKを出す<br>
-      <input type="radio" name="q2" value="a"> 予定が狂うので止める<br>
-      <input type="radio" name="q2" value="d"> 一緒にワクワクして動く
+      <label><input type="radio" name="q2" value="c" required> まずやらせてみる</label>
+      <label><input type="radio" name="q2" value="b"> 意味を確かめてからOKを出す</label>
+      <label><input type="radio" name="q2" value="a"> 予定が狂うので止める</label>
+      <label><input type="radio" name="q2" value="d"> 一緒にワクワクして動く</label>
     </div>
 
     <div class="question">
       <p>Q3. 子どもが落ち込んでいたら？</p>
-      <input type="radio" name="q3" value="a" required> 「大丈夫」と声をかける<br>
-      <input type="radio" name="q3" value="b"> アドバイスする<br>
-      <input type="radio" name="q3" value="c"> 見守る<br>
-      <input type="radio" name="q3" value="d"> 一緒にもう一度挑戦する
+      <label><input type="radio" name="q3" value="a" required> 「大丈夫」と声をかける</label>
+      <label><input type="radio" name="q3" value="b"> アドバイスする</label>
+      <label><input type="radio" name="q3" value="c"> 見守る</label>
+      <label><input type="radio" name="q3" value="d"> 一緒にもう一度挑戦する</label>
     </div>
 
     <div class="question">
       <p>Q4. 子どもが学びにやる気がないときは？</p>
-      <input type="radio" name="q4" value="a" required> 気分転換させる<br>
-      <input type="radio" name="q4" value="b"> 意味を伝える<br>
-      <input type="radio" name="q4" value="c"> 放っておく<br>
-      <input type="radio" name="q4" value="d"> 好きなことに繋げる
+      <label><input type="radio" name="q4" value="a" required> 気分転換させる</label>
+      <label><input type="radio" name="q4" value="b"> 意味を伝える</label>
+      <label><input type="radio" name="q4" value="c"> 放っておく</label>
+      <label><input type="radio" name="q4" value="d"> 好きなことに繋げる</label>
     </div>
 
     <div class="question">
       <p>Q5. AIやデジタルツールとの付き合い方は？</p>
-      <input type="radio" name="q5" value="a" required> 心配でまだよく分からない<br>
-      <input type="radio" name="q5" value="b"> 教育に使えるならアリかも<br>
-      <input type="radio" name="q5" value="c"> 距離を置きたい<br>
-      <input type="radio" name="q5" value="d"> 一緒に楽しんでいる
+      <label><input type="radio" name="q5" value="a" required> 心配でまだよく分からない</label>
+      <label><input type="radio" name="q5" value="b"> 教育に使えるならアリかも</label>
+      <label><input type="radio" name="q5" value="c"> 距離を置きたい</label>
+      <label><input type="radio" name="q5" value="d"> 一緒に楽しんでいる</label>
+    </div>
+
+    <div class="question">
+      <p>Q6. 子どもが失敗したとき、最初にすることは？</p>
+      <label><input type="radio" name="q6" value="a" required> 気持ちを受け止める</label>
+      <label><input type="radio" name="q6" value="b"> 原因を一緒に整理する</label>
+      <label><input type="radio" name="q6" value="c"> 少し距離を置いて見守る</label>
+      <label><input type="radio" name="q6" value="d"> 次のチャレンジを一緒に考える</label>
+    </div>
+
+    <div class="question">
+      <p>Q7. 子どもが夢中になっている遊びを見たら？</p>
+      <label><input type="radio" name="q7" value="c" required> しばらく自由に続けさせる</label>
+      <label><input type="radio" name="q7" value="d"> 一緒に参加して盛り上がる</label>
+      <label><input type="radio" name="q7" value="b"> 何を学べそうか考える</label>
+      <label><input type="radio" name="q7" value="a"> 安全にできるよう整える</label>
+    </div>
+
+    <div class="question">
+      <p>Q8. 新しい教材や体験を選ぶときは？</p>
+      <label><input type="radio" name="q8" value="b" required> 学びの目的が分かるものを選ぶ</label>
+      <label><input type="radio" name="q8" value="a"> 子どもが安心して取り組めるものを選ぶ</label>
+      <label><input type="radio" name="q8" value="d"> 親子で楽しめそうなものを選ぶ</label>
+      <label><input type="radio" name="q8" value="c"> 子どもが自分で工夫できるものを選ぶ</label>
+    </div>
+
+    <div class="question">
+      <p>Q9. 子どもから予想外のアイデアが出たら？</p>
+      <label><input type="radio" name="q9" value="d" required> 「面白いね！」と一緒に試す</label>
+      <label><input type="radio" name="q9" value="b"> どんな意味があるか聞いてみる</label>
+      <label><input type="radio" name="q9" value="c"> まずは本人のやり方で任せる</label>
+      <label><input type="radio" name="q9" value="a"> できそうな範囲を一緒に確認する</label>
+    </div>
+
+    <div class="question">
+      <p>Q10. 親として大切にしたい関わり方は？</p>
+      <label><input type="radio" name="q10" value="a" required> 子どもが安心できる存在でいる</label>
+      <label><input type="radio" name="q10" value="b"> 学びの意味を分かりやすく伝える</label>
+      <label><input type="radio" name="q10" value="c"> 自分で考える時間を大切にする</label>
+      <label><input type="radio" name="q10" value="d"> 一緒に楽しみながら挑戦する</label>
     </div>
 
     <br>
@@ -92,90 +156,71 @@
     const form = document.getElementById('quizForm');
     const resultDiv = document.getElementById('result');
 
-    const resultD = `
-      <h2>💡あなたの診断タイプは…</h2>
-      <h1 style="color: #006400;">🟡 タイプD：共創チャレンジャー</h1>
-      <p>👦 子どもの「やってみたい！」にワクワクしながら付き合って、一緒にチャレンジを楽しめるあなた。</p>
-      <p>でもときどき…</p>
-      <ul>
-        <li>❓ この関わり方でいいのかな？</li>
-        <li>❓ もっと“学び”につなげられるサポートができたら…</li>
-      </ul>
-      <p>そんなふうに思うこと、ありませんか？</p>
-      <p>あなたのような共創タイプは、<strong>子どもの好奇心の原石を見つけて磨くプロ</strong>になれます。</p>
-      <p>そのためには、大人も一緒に楽しみながら学ぶ姿勢がとても大切です。</p>
-      <p>🔧 AIをツールとして活用することで、子どもの「好き」や「なぜ？」を深め、<br>
-         自然と“学ぶ楽しさ”へとつなげていくことができます。</p>
-
+    const lineBlock = (typeName) => `
       <h3>🌱LINEでサポートを受け取ろう</h3>
-      <p>📲 月3回の親子ワークや、声かけアイディアをLINEでお届け中！</p>
+      <p>📲 公式LINEではAI活用や子育ての情報を発信中！診断結果「${typeName}」で詳しい結果を配信します。</p>
       <div style="margin-top: 20px; text-align: center;">
-        <a href="https://lin.ee/u5XpmRk" target="_blank" class="line-button">👉 LINEで受け取る</a>
-      </div>
-    `;
-
-    const resultA = `
-      <h2>💡あなたの診断タイプは…</h2>
-      <h1 style="color: #006400;">🟢 タイプA：安心サポーター</h1>
-      <p>子どもの気持ちに寄り添い、安心できる土台をつくるのが得意なタイプです。</p>
-      <p>まず受け止める力があるからこそ、子どもは「やってみようかな」と思いやすくなります。</p>
-      <p>次の一歩として、子どもの「なぜ？」や「やってみたい」を少しだけ深掘りする声かけを足してみましょう。</p>
-
-      <h3>🌱LINEでサポートを受け取ろう</h3>
-      <p>📲 月3回の親子ワークや、声かけアイディアをLINEでお届け中！</p>
-      <div style="margin-top: 20px; text-align: center;">
-        <a href="https://lin.ee/u5XpmRk" target="_blank" class="line-button">👉 LINEで受け取る</a>
-      </div>
-    `;
-
-    const resultB = `
-      <h2>💡あなたの診断タイプは…</h2>
-      <h1 style="color: #006400;">🔵 タイプB：意味づけナビゲーター</h1>
-      <p>子どもの行動や学びに「どんな意味があるか」を考え、道筋を示すのが得意なタイプです。</p>
-      <p>学びを生活や将来につなげて伝えられるので、子どもにとって頼れる案内役になれます。</p>
-      <p>ときどき答えを急がず、子ども自身の発見を待つ時間をつくると、好奇心がさらに伸びていきます。</p>
-
-      <h3>🌱LINEでサポートを受け取ろう</h3>
-      <p>📲 月3回の親子ワークや、声かけアイディアをLINEでお届け中！</p>
-      <div style="margin-top: 20px; text-align: center;">
-        <a href="https://lin.ee/u5XpmRk" target="_blank" class="line-button">👉 LINEで受け取る</a>
-      </div>
-    `;
-
-    const resultC = `
-      <h2>💡あなたの診断タイプは…</h2>
-      <h1 style="color: #006400;">🟣 タイプC：見守りクリエイター</h1>
-      <p>子どもが自分で考えたり試したりする余白を大切にできるタイプです。</p>
-      <p>すぐに手を出しすぎない関わりは、子どもの主体性や工夫する力を育てます。</p>
-      <p>そこに「どう思った？」「次は何を試す？」という一言を添えると、学びがぐっと深まります。</p>
-
-      <h3>🌱LINEでサポートを受け取ろう</h3>
-      <p>📲 月3回の親子ワークや、声かけアイディアをLINEでお届け中！</p>
-      <div style="margin-top: 20px; text-align: center;">
-        <a href="https://lin.ee/u5XpmRk" target="_blank" class="line-button">👉 LINEで受け取る</a>
+        <a href="https://lin.ee/u5XpmRk" target="_blank" class="line-button">👉 詳しい結果をLINEで受け取る</a>
       </div>
     `;
 
     const results = {
-      a: resultA,
-      b: resultB,
-      c: resultC,
-      d: resultD
+      a: `
+        <h2>💡あなたの診断タイプは…</h2>
+        <h1 style="color: #006400;">🟢 安心サポータータイプ</h1>
+        <p>子どもの気持ちに寄り添い、安心できる土台をつくるのが得意なタイプです。</p>
+        <p>まず受け止める力があるからこそ、子どもは「やってみようかな」と思いやすくなります。</p>
+        <p>次の一歩として、子どもの「なぜ？」や「やってみたい」を少しだけ深掘りする声かけを足してみましょう。</p>
+        ${lineBlock("安心サポータータイプ")}
+      `,
+      b: `
+        <h2>💡あなたの診断タイプは…</h2>
+        <h1 style="color: #006400;">🔵 意味づけナビゲータータイプ</h1>
+        <p>子どもの行動や学びに「どんな意味があるか」を考え、道筋を示すのが得意なタイプです。</p>
+        <p>学びを生活や将来につなげて伝えられるので、子どもにとって頼れる案内役になれます。</p>
+        <p>ときどき答えを急がず、子ども自身の発見を待つ時間をつくると、好奇心がさらに伸びていきます。</p>
+        ${lineBlock("意味づけナビゲータータイプ")}
+      `,
+      c: `
+        <h2>💡あなたの診断タイプは…</h2>
+        <h1 style="color: #006400;">🟣 見守りクリエイタータイプ</h1>
+        <p>子どもが自分で考えたり試したりする余白を大切にできるタイプです。</p>
+        <p>すぐに手を出しすぎない関わりは、子どもの主体性や工夫する力を育てます。</p>
+        <p>そこに「どう思った？」「次は何を試す？」という一言を添えると、学びがぐっと深まります。</p>
+        ${lineBlock("見守りクリエイタータイプ")}
+      `,
+      d: `
+        <h2>💡あなたの診断タイプは…</h2>
+        <h1 style="color: #006400;">🟡 共創チャレンジャータイプ</h1>
+        <p>👦 子どもの「やってみたい！」にワクワクしながら付き合って、一緒にチャレンジを楽しめるあなた。</p>
+        <p>でもときどき…</p>
+        <ul>
+          <li>❓ この関わり方でいいのかな？</li>
+          <li>❓ もっと“学び”につなげられるサポートができたら…</li>
+        </ul>
+        <p>そんなふうに思うこと、ありませんか？</p>
+        <p>あなたのような共創タイプは、<strong>子どもの好奇心の原石を見つけて磨くプロ</strong>になれます。</p>
+        <p>そのためには、大人も一緒に楽しみながら学ぶ姿勢がとても大切です。</p>
+        <p>🔧 AIをツールとして活用することで、子どもの「好き」や「なぜ？」を深め、<br>
+        自然と“学ぶ楽しさ”へとつなげていくことができます。</p>
+        ${lineBlock("共創チャレンジャータイプ")}
+      `
     };
 
     form.onsubmit = function(e) {
       e.preventDefault();
       const formData = new FormData(form);
-      let score = {a:0, b:0, c:0, d:0};
-      for (let value of formData.values()) {
+      const score = { a: 0, b: 0, c: 0, d: 0 };
+
+      for (const value of formData.values()) {
         score[value]++;
       }
+
       const max = Object.entries(score).reduce((a, b) => a[1] >= b[1] ? a : b)[0];
       resultDiv.innerHTML = results[max];
       resultDiv.style.display = "block";
       resultDiv.scrollIntoView({ behavior: "smooth", block: "start" });
     };
   </script>
-
 </body>
 </html>
